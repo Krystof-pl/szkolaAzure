@@ -1,0 +1,64 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "storageName": {
+            "value": "kubelek"
+        },
+        "storageSKU": {
+            "value": "Standard_LRS"
+        },
+        "vm1Name": {
+            "value": "kobuntu1"
+        },
+        "vm2Name": {
+            "value": "kobuntu2"
+        },
+        "adminUsername": {
+            "reference": {
+                "keyVault": {
+                "id": "/subscriptions/<subscriptionID>/resourceGroups/kobuntu-rg/providers/Microsoft.KeyVault/vaults/<vaultname>"
+                },
+                "secretName": "User"
+            }
+        },
+        "authenticationType": {
+            "value": "password"
+        },
+        "adminPasswordOrKey": {
+            "reference": {
+                "keyVault": {
+                    "id": "/subscriptions/<subscriptionID>/resourceGroups/kobuntu-rg/providers/Microsoft.KeyVault/vaults/<vaultname>"
+                },
+                "secretName": "Password"
+            }
+        },
+        "dnsLabelPrefix1": {
+            "value": "kobuntu1-45ic7psrwebso"
+        },
+        "dnsLabelPrefix2": {
+            "value": "kobuntu2-45ic7psrwebso"
+        },
+        "ubuntuOSVersion": {
+            "value": "18.04-LTS"
+        },
+        "location": {
+            "value": "northeurope"
+        },
+        "vmSize": {
+            "value": "Standard_B2s"
+        },
+        "virtualNetworkName": {
+            "value": "vNet"
+        },
+        "subnet1Name": {
+            "value": "Subnet1"
+        },
+        "subnet2Name": {
+            "value": "Subnet2"
+        },
+        "networkSecurityGroupName": {
+            "value": "SecGroupNet"
+        }
+    }
+}
